@@ -1,0 +1,58 @@
+# Site settings
+name: Open-Publisher Documentation
+email: ctarwater@gmail.com
+author: Chrisanthropic
+
+keywords: jekyll, pandoc, LaTeX, ebook, self-publish, formatting, epub, mobi
+description: > # this means to ignore newlines until "baseurl:"
+  Open-Publisher documentation website. Easily manage the creation of epub, mobi, pdf, and html files from a Markdown source; with a focus on fiction.
+
+baseurl: /Open-Publisher-Documentation/
+url: https://chrisanthropic.github.io
+
+header: no
+header_sm: images/banner-small.jpg
+header_med: images/banner-med.jpg
+header_large: images/banner-large.jpg
+header_xl: images/banner-xl.jpg
+
+
+# Exclude our ruby stuff
+exclude: [.bundle, bin, vendor, Gemfile, Gemfile.lock, Rakefile, s3_website.yml, .last_optimized]
+
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+
+destination: _site
+
+gems:
+  - jekyll-feed
+
+feed:
+  path: atom.xml
+  
+# Compress our Css
+#sass:
+#    style: :compressed
+
+permalink: /blog/:year/:title
+
+#### SEO Stuff
+# Google Analytics
+google_universal_analytics: 
+google_universal_analytics_cookiedomain: auto
+
+# Facebook Opengraph
+facebook_user:
+facebook_app_id:                      #enter your App ID
+facebook_locale: en_US
+facebook_page:                        #the URL of your Facebook Page
+facebook_image:                       #enter a default image (at least 200x200px) to use here for posts/pages that don't have one.
+
+# Twitter Cards
+twitter_user: 
+twitter_card: true
+twitter_image:                        #enter a default image (at least 200x200px) to use here for posts/pages that don't have one.
