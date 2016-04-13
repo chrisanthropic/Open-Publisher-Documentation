@@ -42,17 +42,5 @@ permalink: /blog/:year/:title
 
 #### SEO Stuff
 # Google Analytics
-google_universal_analytics: 
+google_universal_analytics: UA-76335633-1
 google_universal_analytics_cookiedomain: auto
-
-# Facebook Opengraph
-facebook_user:
-facebook_app_id:                      #enter your App ID
-facebook_locale: en_US
-facebook_page:                        #the URL of your Facebook Page
-facebook_image:                       #enter a default image (at least 200x200px) to use here for posts/pages that don't have one.
-
-# Twitter Cards
-twitter_user: 
-twitter_card: true
-twitter_image:                        #enter a default image (at least 200x200px) to use here for posts/pages that don't have one.
