@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  
+  <title>STRUCTURE | Open-Publisher Documentation</title>
+  
+    <meta name="author" content="Chrisanthropic">
+  
+  
+  <meta name="description" content="Open-Publisher documentation website. Easily manage the creation of epub, mobi, pdf, and html files from a Markdown source; with a focus on fiction.
+">
+  
+    <meta name="keywords" content="jekyll, pandoc, LaTeX, ebook, self-publish, formatting, epub, mobi">
+  
+    
+  <link href="/Open-Publisher-Documentation//css/main.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link rel="canonical" href="/Open-Publisher-Documentation//documentation/structure.html">
+  <link href="/Open-Publisher-Documentation//favicon.ico" rel="icon">
+  <link rel="alternate" type="application/atom+xml" title="Open-Publisher Documentation" href="/Open-Publisher-Documentation//atom.xml"/>
+  
+  <!-- Social media content metadata -->
+
+
+<meta property="twitter:card" content="summary" />
+<meta property="twitter:site" content="" />
+<meta property="twitter:url" content="/Open-Publisher-Documentation/" />
+<meta property="twitter:title" content="STRUCTURE" />
+<meta property="twitter:description" content="Open-Publisher documentation website. Easily manage the creation of epub, mobi, pdf, and html files from a Markdown source; with a focus on fiction.
+" />
+<meta property="twitter:creator" content="" />
+<meta property="twitter:image:src" content="" />
+
+  
+ 
+</head>
+
+  <body>
+    <main class="wrap">
+      
+
+
+      <nav class="navbar">
+  <nav class="row">
+    <div id="nav">
+      <ul class="columns medium-8 left primary-nav">
+
+	<li id="toggleMenu"><a href="#nav">Menu</a></li>
+	<li id="hideMenu"><a href="#toggleMenu">Menu</a></li>
+	
+	
+	  
+		  
+		  <li><a href="/Open-Publisher-Documentation//">home</a></li>
+		    
+	  
+	
+	  
+	    <li class="dropdown">
+	      <a href="/Open-Publisher-Documentation/">documentation</a>
+		<ul>
+		  
+		    <li><a href="/Open-Publisher-Documentation//documentation/requirements.html">Requirements</a></li>
+		  
+		    <li><a href="/Open-Publisher-Documentation//documentation/installation.html">Installation</a></li>
+		  
+		    <li><a href="/Open-Publisher-Documentation//documentation/use.html">Use</a></li>
+		  
+		    <li><a href="/Open-Publisher-Documentation//documentation/structure.html">Structure</a></li>
+		  
+		    <li><a href="/Open-Publisher-Documentation//documentation/workflow.html">Workflow</a></li>
+		  
+		</ul>
+	    </li>
+	
+	
+	  
+		  
+		  <li><a href="/Open-Publisher-Documentation//about">About</a></li>
+		    
+	  
+	
+	  
+		  
+		    <li><a href="https://github.com/chrisanthropic/Open-Publisher">Open-Publisher</a></li>
+		  
+	  
+	
+      </ul>
+
+      <ul class="columns medium-4 right primary-nav">
+	
+	  <li class="right"><a href="https://github.com/chrisanthropic"><span class="icon-github socials"></span></a></li>
+	
+	  <li class="right"><a href="https://twitter.com/@chrisanthropic"><span class="icon-twitter socials"></span></a></li>
+	
+	  <li class="right"><a href="https://www.linkedin.com/in/ctarwater"><span class="icon-linkedin socials"></span></a></li>
+	
+	  <li class="right"><a href="https://chrisanthropic.github.io/Open-Publisher-Documentation/atom.xml"><span class="icon-feed socials"></span></a></li>
+	
+      </ul>
+    </div>
+  </nav>
+</nav>
+      <div class="row">
+
+  <header class="post-header">
+    <h1 class="post-title">STRUCTURE</h1>
+  </header>
+
+  <article class="post-content">
+    <h2 id="source">SOURCE</h2>
+<p>This folder holds the files used by Jekyll to create our markdown files.</p>
+
+<h3 id="sourceincludes">Source/_includes</h3>
+<p>This folder contains the default ‘common’ files as well as a folder for every book you’ve added. You’ll find two files inside every book folder; amazon.md and chapters.md.</p>
+
+<p>Chapters.md is where you’ll paste your manuscript.</p>
+
+<h3 id="sourcelayouts">Source/_layouts</h3>
+<p>This folder contains a folder for every book you’ve added, the files inside define what files to combine when creating each of our formats. The default layouts each combine the following files (in the following order) when creating our final markdown file for each format.</p>
+
+<ul>
+  <li><strong>amazon.md</strong>
+    <ul>
+      <li>Source/_includes/$BOOK-TITLE/amazon.md
+        <ul>
+          <li>file differs from chapters.md in that it adds <code class="highlighter-rouge">Source/_includes/amazon_review.md</code> directly after the contents of <code class="highlighter-rouge">chapters.md</code></li>
+        </ul>
+      </li>
+      <li>Source/_includes/magnet_tah.md</li>
+      <li>Source/_includes/bio.md</li>
+      <li>Source/_includes/bibliography.md</li>
+      <li>Source/_includes/license.md</li>
+    </ul>
+  </li>
+  <li><strong>epub.md</strong>
+    <ul>
+      <li>Source/_includes/$BOOK-TITLE/chapters.md</li>
+      <li>Source/_includes/magnet_tah.md</li>
+      <li>Source/_includes/bio.md</li>
+      <li>Source/_includes/bibliography.md</li>
+      <li>Source/_includes/license.md</li>
+    </ul>
+  </li>
+  <li><strong>pdf.md</strong>
+    <ul>
+      <li>Source/_includes/$BOOK-TITLE/chapters.md</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="sourcebook-title">Source/$BOOK-TITLE</h3>
+<p>This folder defines what formats to create for each book and which layouts to use for each format.</p>
+
+<h3 id="sourceimages">Source/images</h3>
+<p>This folder is used to hold any images, primarily I use it for book covers.</p>
+
+<h2 id="site">_SITE</h2>
+<p>Jekyll creates this folder every time you run the <code class="highlighter-rouge">bind.sh</code> script. Inside you’ll find the ‘final’ markdown files for each format that were created according to the files defined in _layouts. These are the files that we’ll feed into Pandoc for conversion.</p>
+
+<h2 id="books">BOOKS</h2>
+<p>This directory holds your finished books. Inside you’ll find a folder for each book you’ve created, containing every format you’ve created for it.</p>
+
+<h2 id="pandoc">PANDOC</h2>
+<p>This directory holds stuff that Pandoc needs.</p>
+
+<h3 id="pandoccss">Pandoc/css</h3>
+<p>This is the stylesheet used when creating epub and mobi/Amazon files.</p>
+
+<h3 id="pandoctemplates">Pandoc/templates</h3>
+<p>This directory contains the custom templates Open-Publisher uses when converting files with Pandoc.</p>
+
+<h2 id="misc">MISC.</h2>
+<ul>
+  <li>bind.sh
+    <ul>
+      <li>A small bash script used to ‘bind’ your books.</li>
+    </ul>
+  </li>
+  <li>new.sh
+    <ul>
+      <li>A small bash script used to create the scaffolding Open-Publisher expects for new books.</li>
+    </ul>
+  </li>
+  <li>margins.sh
+    <ul>
+      <li>A mostly unused script I used to calculate margins.</li>
+    </ul>
+  </li>
+  <li>_config.yml
+    <ul>
+      <li>This file defines a couple things required by Jekyll.</li>
+    </ul>
+  </li>
+</ul>
+
+  </article>
+
+</div>
+
+    </main>
+      <footer class="site-footer">
+  <div class="row">
+    <div class="small-6 columns">
+    </div>
+    <div class="small-6 columns">
+    </div>
+  </div>
+</footer> 
+
+  </body>
+</html>

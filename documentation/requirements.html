@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name=viewport content="width=device-width, initial-scale=1">
   
-  <title>ABOUT | Open-Publisher Documentation</title>
+  <title>REQUIREMENTS | Open-Publisher Documentation</title>
   
     <meta name="author" content="Chrisanthropic">
   
@@ -17,7 +17,7 @@
   
     
   <link href="/Open-Publisher-Documentation//css/main.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link rel="canonical" href="/Open-Publisher-Documentation//about/">
+  <link rel="canonical" href="/Open-Publisher-Documentation//documentation/requirements.html">
   <link href="/Open-Publisher-Documentation//favicon.ico" rel="icon">
   <link rel="alternate" type="application/atom+xml" title="Open-Publisher Documentation" href="/Open-Publisher-Documentation//atom.xml"/>
   
@@ -27,7 +27,7 @@
 <meta property="twitter:card" content="summary" />
 <meta property="twitter:site" content="" />
 <meta property="twitter:url" content="/Open-Publisher-Documentation/" />
-<meta property="twitter:title" content="ABOUT" />
+<meta property="twitter:title" content="REQUIREMENTS" />
 <meta property="twitter:description" content="Open-Publisher documentation website. Easily manage the creation of epub, mobi, pdf, and html files from a Markdown source; with a focus on fiction.
 " />
 <meta property="twitter:creator" content="" />
@@ -104,23 +104,55 @@
     </div>
   </nav>
 </nav>
-      <article class="row">
-  <section class="small-12 columns page-content">
-  <p>My wife is an author and I handle all of the digital/print book creation. After 4+ years of using various tools I decided to streamline my process.<p>
+      <div class="row">
 
-  <p>It can be a pain to manually update a Bio page with new information or new books for example. Doing a simple thing like that for 3 formats of a dozen books can take time and introduces the possibility of new typos with every change.</p>
+  <header class="post-header">
+    <h1 class="post-title">REQUIREMENTS</h1>
+  </header>
 
-  <p>Pandoc is a great tool to convert markdown files to html/epub/pdf etc. but it's epub templating is still very minimalistic. It requires multiple stages to create a template that allows me to reuse common pages such as biography, licensing, etc.</p>
+  <article class="post-content">
+    <p>Open-Publisher needs the following software and tools to installed in order to work:</p>
 
-  <p>I love Jekyll and use it whenever I can for web design. One of my favorite aspects is the ability to define 'code chunks' in the _includes folder and then use reference it wherever I want. Change that include file, rebuild, and every reference to it on your website is updated. It's that kind of logic that I need for creating my books.</p>
+<h2 id="jekyll">Jekyll</h2>
+<p><a href="https://jekyllrb.com/">Jekyll</a> - a static site generator. For our purposes it is used to combine multiple markdown files into a single markdown file.</p>
 
-  <p>By using Jekyll's templating I'm able to create files that slightly differ based on need. The mandatory Smashwords title page for example, or a custom Title page with Amazon URLs to other books.</p>
+<h2 id="pandoc">Pandoc</h2>
+<p><a href="http://pandoc.org/">Pandoc</a> - converts <em>from</em> many file formats <em>to</em> many other file formats. For our purposes, it converts our markdown file to epub and pdf.</p>
 
-  <p>Jekyll allows me to create custom templates, multiple 'includes', and then outputs them in a perfectly formatted Markdown file.</p>
+<h2 id="kindlegen">Kindlegen</h2>
+<p><a href="https://www.amazon.com/gp/feature.html?docId=1000765211">KindleGen</a> - Amazon’s free tool to create .mobi/kindle files. For our purposes it converts epub to mobi.</p>
 
-  <p>This markdown file can then be passed along to Pandoc and converted to epub/mobi/pdf.</p>
-  </section>
-</article>
+<h2 id="latex--texlive">LaTeX / TexLive</h2>
+<p><a href="https://www.latex-project.org/">LaTeX</a> - typesetting software that can output PDF files.</p>
+
+<h2 id="fonts">Fonts</h2>
+<p>Our LaTeX/PDF template uses the following non-free fonts:</p>
+
+<p><a href="https://www.myfonts.com/fonts/adobe/garamond/licensing.html">Adobe Garamond Pro</a></p>
+
+<ul>
+  <li>Adobe Garamond Pro</li>
+  <li>Adobe Garamond Pro Bold</li>
+</ul>
+
+<p><a href="https://www.urwpp.de/en/shop/?fontshop=datei:show_font_details;fontnummer:f008013t;">URW Franklin Gothic</a></p>
+
+<ul>
+  <li>URW Gothic L Book</li>
+  <li>URW Gothic L Demi</li>
+</ul>
+
+<p><a href="https://www.myfonts.com/fonts/adobe/minion/">Minion Pro</a></p>
+
+<ul>
+  <li>Minion Pro</li>
+  <li>Minion Pro Bold</li>
+  <li>Minion Pro BoldItalic</li>
+</ul>
+
+  </article>
+
+</div>
 
     </main>
       <footer class="site-footer">
