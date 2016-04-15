@@ -16,22 +16,3 @@ Open-Publisher needs the following software and tools to installed in order to w
 
 ## LaTeX / TexLive
 [LaTeX](https://www.latex-project.org/) - typesetting software that can output PDF files.
-
-## Fonts
-Our LaTeX/PDF template uses the following non-free fonts:
-
-[Adobe Garamond Pro](https://www.myfonts.com/fonts/adobe/garamond/licensing.html)
-
-* Adobe Garamond Pro
-* Adobe Garamond Pro Bold
-
-[URW Franklin Gothic](https://www.urwpp.de/en/shop/?fontshop=datei:show_font_details;fontnummer:f008013t;)
-
-* URW Gothic L Book
-* URW Gothic L Demi
-
-[Minion Pro](https://www.myfonts.com/fonts/adobe/minion/)
-
-* Minion Pro
-* Minion Pro Bold
-* Minion Pro BoldItalic
