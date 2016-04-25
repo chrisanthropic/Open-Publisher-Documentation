@@ -1,0 +1,57 @@
+<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name=viewport content="width=device-width, initial-scale=1"> <title>RAKE | Open-Publisher Documentation</title> <meta name="author" content="Chrisanthropic"> <meta name="description" content="Open-Publisher documentation website. Easily manage the creation of epub, mobi, pdf, and html files from a Markdown source; with a focus on fiction. "> <meta name="keywords" content="jekyll, pandoc, LaTeX, ebook, self-publish, formatting, epub, mobi"> <link href="/Open-Publisher-Documentation//css/main.css" media="screen, projection" rel="stylesheet" type="text/css"> <link rel="canonical" href="/Open-Publisher-Documentation//use/rake.html"> <link href="/Open-Publisher-Documentation//favicon.ico" rel="icon"> <link rel="alternate" type="application/atom+xml" title="Open-Publisher Documentation" href="/Open-Publisher-Documentation//atom.xml"/> <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-76335633-1', 'auto');
+    ga('send', 'pageview');
+    </script> </head> <body> <main class="wrap"> <nav class="navbar"> <nav class="row"> <div id="nav"> <ul class="columns medium-8 left primary-nav"> <li id="toggleMenu"><a href="#nav">Menu</a></li> <li id="hideMenu"><a href="#toggleMenu">Menu</a></li> <li><a href="/Open-Publisher-Documentation//">home</a></li> <li class="dropdown"> <a href="/Open-Publisher-Documentation/">documentation</a> <ul> <li><a href="/Open-Publisher-Documentation//documentation/requirements.html">Requirements</a></li> <li><a href="/Open-Publisher-Documentation//documentation/installation.html">Installation</a></li> <li><a href="/Open-Publisher-Documentation//documentation/structure.html">Structure</a></li> <li><a href="/Open-Publisher-Documentation//documentation/workflow.html">Workflow</a></li> </ul> </li> <li class="dropdown"> <a href="/Open-Publisher-Documentation/">Use</a> <ul> <li><a href="/Open-Publisher-Documentation//use/use.html">Use</a></li> <li><a href="/Open-Publisher-Documentation//use/bash.html">Bash</a></li> <li><a href="/Open-Publisher-Documentation//use/rake.html">Rake</a></li> <li><a href="/Open-Publisher-Documentation//use/docker.html">Docker</a></li> </ul> </li> <li><a href="/Open-Publisher-Documentation//about">About</a></li> <li><a href="https://github.com/chrisanthropic/Open-Publisher">Open-Publisher</a></li> </ul> <ul class="columns medium-4 right primary-nav"> <li class="right"><a href="https://github.com/chrisanthropic"><span class="icon-github socials"></span></a></li> <li class="right"><a href="https://twitter.com/@chrisanthropic"><span class="icon-twitter socials"></span></a></li> <li class="right"><a href="https://www.linkedin.com/in/ctarwater"><span class="icon-linkedin socials"></span></a></li> <li class="right"><a href="https://chrisanthropic.github.io/Open-Publisher-Documentation/atom.xml"><span class="icon-feed socials"></span></a></li> </ul> </div> </nav> </nav> <div class="row"> <header class="post-header"> <h1 class="post-title">RAKE</h1> </header> <article class="post-content"> <h2 id="create-our-example-book">Create our Example Book</h2> <p>First create the contents of our Example book: - <code class="highlighter-rouge">bundle exec rake skel</code></p> <p>Now create the actual books: - <code class="highlighter-rouge">bundle exec rake all[Example]</code></p> <p>Open the “Books” directory to see the results.</p> <h2 id="start-a-new-book">Start a New Book</h2> <p>Use Rake to create a new book. It creates everything needed and puts it in the right places so that you can just write.</p> <p>Run the command <code class="highlighter-rouge">bundle exec rake build</code> and enter the title of your book when prompted.</p> <h2 id="write-your-manuscript">Write Your Manuscript</h2> <p>Paste your manuscript in <code class="highlighter-rouge">Source/_includes/$BOOK-TITLE/chapters.md</code></p> <h2 id="update-your-metadata">Update Your MetaData</h2> <p>The beggining of your <code class="highlighter-rouge">Source/_includes/$BOOK-TITLE/chapters.md</code> contains “YAML Front Matter” and is used to define metadata about your book that we use in various places for various templates. Anything with an asterisk is optional.</p> <div class="highlighter-rouge"><pre class="highlight"><code>---
+title: Title of your book
+subtitle*: Optional subtitle
+author: Author Name
+website: Author Website
+
+type: Genre of your book
+lang: A string value in BCP 47 format: http://tools.ietf.org/html/bcp47 (example: en-US)
+date: YYYY-MM-DD
+year: YYYY
+
+cover-image: Source/images/YOUR-IMAGE.jpg
+
+publisher: Publisher of your book
+rights: A single sentence regarding the licensing of your book
+
+isbn*: Optional ISBN of your print book
+isbn-13*: Optional 13 digit ISBN of your print book
+epub-isbn*: Optional ISBN of your epub
+
+dedication: Optional dedication.
+
+identifier:
+    - scheme: UUID
+      text: A unique UUID for your ebook.
+      
+contributors*:
+    - designer*: Who designed your book/cover
+      artist*: Who created the art of your book cover
+      editor*: Who edited your book
+
+book1*: 
+    - title*: Optional books to include on the title page
+      link*: If you include Amazon links here, they'll get linked in the Amazon version
+book2*:
+    - title*: Add a second book
+      link*: http://www.amazon.com/dp/B0090NFRY2
+book3*:
+    - title*: This handles up to 5 books
+      link*: http://www.amazon.com/dp/B00HE5I1BE
+    
+review*:
+    - amazon*: https://www.amazon.com/review/create-review?asin=B007UIYEAW | Optional Amazon url to review your book.
+    
+magnet*:
+    - image*: ../Images/file0.jpg | optional image/url to add to the front matter of your ebooks to get people to join your newsletter
+      link*: https://www.backthatelfup.com/free-books/
+---
+</code></pre> </div> <h2 id="customize-common-pages">Customize Common Pages</h2> <p>Open-Publisher uses three ‘common’ pages by default which are shared between all books. These pages will need to be customized with your information.</p> <p>Customize the contents of <code class="highlighter-rouge">Source/_includes/amazon_review.md</code>, <code class="highlighter-rouge">Source/_includes/bio.md</code>, and <code class="highlighter-rouge">Source/_includes/license.md</code>.</p> <ul> <li> <p><strong>Amazon Review</strong>: This page is used for our Amazon template and is added to the last page of the book immediately following the ending. We use it to kindly request that the reader consider leaving a review and provide a link to the Amazon page where they can easily do so.</p> </li> <li> <p><strong>Bio</strong>: This page is used as a bio page for more information about the author.</p> </li> <li> <p><strong>License</strong>: This is the license page. We default to the Creative Commons Attribution-NonCommercial-ShareAlike license because that’s what we personally use. Feel free to modify it to your preferred license.</p> <ul> <li>NOTE: Due to technological limitations the license page here IS NOT used when creating a print-ready PDF which uses it’s own license page as defined in the LaTeX template at <code class="highlighter-rouge">Pandoc/templates/cs-5x8-pdf.latex</code> in the “Create a copyright page” block.</li> </ul> </li> </ul> <h2 id="build-your-book">Build Your Book</h2> <p>Use Rake script to create your books by running <code class="highlighter-rouge">bundle exec rake $FORMAT[$TITLE]</code></p> <h3 id="build-all-formats-of-book-titled-example">Build all formats of book titled “Example”</h3> <p>Run <code class="highlighter-rouge">bundle exec rake all[Example]</code></p> <h3 id="build-epub-format-of-book-titled-example">Build epub format of book titled “Example”</h3> <p>Run <code class="highlighter-rouge">bundle exec rake epub[Example]</code></p> <h3 id="build-amazon-format-of-book-titled-example">Build amazon format of book titled “Example”</h3> <p>Run <code class="highlighter-rouge">bundle exec rake amazon[Example]</code></p> <h3 id="build-smashwords-format-of-book-titled-example">Build smashwords format of book titled “Example”</h3> <p>Run <code class="highlighter-rouge">bundle exec rake smashwords[Example]</code></p> <h3 id="build-a-generic-pdf-format-of-book-titled-example">Build a generic PDF format of book titled “Example”</h3> <p>Run <code class="highlighter-rouge">bundle exec rake pdf[Example]</code></p> <h3 id="build-a-print-ready-pdf-format-of-book-titled-example">Build a print-ready pdf format of book titled “Example”</h3> <p>Run <code class="highlighter-rouge">bundle exec rake print[Example]</code></p> <h2 id="build-multiple-books">Build Multiple Books</h2> <p>Open-Publisher can easily handle multiple books.</p> <h3 id="build-all-formats-of-all-books">Build ALL formats of ALL books</h3> <p>Run <code class="highlighter-rouge">bundle exec rake all[all]</code></p> <h3 id="build-epub-format-of-all-books">Build epub format of ALL books</h3> <p>Run <code class="highlighter-rouge">bundle exec rake epub[all]</code></p> <h3 id="build-amazon-format-of-all-books">Build amazon format of ALL books</h3> <p>Run <code class="highlighter-rouge">bundle exec rake amazon[all]</code></p> <h3 id="build-smashwords-format-of-all-books">Build smashwords format of ALL books</h3> <p>Run <code class="highlighter-rouge">bundle exec rake smashwords[all]</code></p> <h3 id="build-a-generic-pdf-format-of-all-books">Build a generic PDF format of ALL books</h3> <p>Run <code class="highlighter-rouge">bundle exec rake pdf[all]</code></p> <h3 id="build-a-print-ready-pdf-format-of-all-books">Build a print-ready pdf format of ALL books</h3> <p>Run <code class="highlighter-rouge">bundle exec rake print[all]</code></p> <h2 id="delete-a-book">Delete a book</h2> <p>Run <code class="highlighter-rouge">bundle exec rake destroy</code> and enter the title of your book when prompted.</p> </article> </div> </main> <footer class="site-footer"> <div class="row"> <div class="small-6 columns"> </div> <div class="small-6 columns"> </div> </div> </footer> </body> </html>

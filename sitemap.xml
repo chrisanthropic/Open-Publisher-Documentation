@@ -9,7 +9,17 @@
   </url>
   
   <url>
+    <loc>https://chrisanthropic.github.io/Open-Publisher-Documentation//use/bash.html</loc>
+    
+  </url>
+  
+  <url>
     <loc>https://chrisanthropic.github.io/Open-Publisher-Documentation//blog/</loc>
+    
+  </url>
+  
+  <url>
+    <loc>https://chrisanthropic.github.io/Open-Publisher-Documentation//use/docker.html</loc>
     
   </url>
   
@@ -34,12 +44,17 @@
   </url>
   
   <url>
+    <loc>https://chrisanthropic.github.io/Open-Publisher-Documentation//use/rake.html</loc>
+    
+  </url>
+  
+  <url>
     <loc>https://chrisanthropic.github.io/Open-Publisher-Documentation//documentation/requirements.html</loc>
     
   </url>
   
   <url>
-    <loc>https://chrisanthropic.github.io/Open-Publisher-Documentation//documentation/use.html</loc>
+    <loc>https://chrisanthropic.github.io/Open-Publisher-Documentation//use/use.html</loc>
     
   </url>
   
