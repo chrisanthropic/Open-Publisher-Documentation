@@ -7,13 +7,20 @@
       subhref: "/documentation/requirements.html"
     - subtitle: "Installation"
       subhref: "/documentation/installation.html"
-    - subtitle: "Use"
-      subhref: "/documentation/use.html"
     - subtitle: "Structure"
       subhref: "/documentation/structure.html"
     - subtitle: "Workflow"
       subhref: "/documentation/workflow.html"
-
+- title: "Use"
+  subcategories:
+    - subtitle: "Use"
+      subhref: "/use/use.html"
+    - subtitle: "Bash"
+      subhref: "/use/bash.html"
+    - subtitle: "Rake"
+      subhref: "/use/rake.html"
+    - subtitle: "Docker"
+      subhref: "/use/docker.html"
 - title: "About"
   href: "/about"
       

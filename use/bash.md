@@ -1,8 +1,16 @@
 ---
 layout: page
-title: "USE"
-permalink: /documentation/use.html
+title: "BASH"
+permalink: /use/bash.html
 --- 
+## Create our Example Book
+First create the contents of our Example book:
+  - `. new.sh skel`
+  
+Now create the actual books:
+  - `. bind.sh all Example`
+  
+Open the "Books" directory to see the results.
 
 ## Start a New Book
 Use the `new.sh` script to create a new book. It creates everything needed and puts it in the right places so that you can just write.

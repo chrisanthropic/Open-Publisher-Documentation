@@ -5,6 +5,9 @@ permalink: /documentation/requirements.html
 --- 
 Open-Publisher needs the following software and tools to installed in order to work:
 
+## Ruby 2.x
+Jekyll requires ruby so you'll need a working Ruby installation.
+
 ## Jekyll
 [Jekyll](https://jekyllrb.com/) - a static site generator. For our purposes it is used to combine multiple markdown files into a single markdown file.
 
@@ -16,3 +19,6 @@ Open-Publisher needs the following software and tools to installed in order to w
 
 ## LaTeX / TexLive
 [LaTeX](https://www.latex-project.org/) - typesetting software that can output PDF files.
+
+## Docker
+We also provide an optional Dockerfile that builds a Docker container with all of the requirements already installed.
