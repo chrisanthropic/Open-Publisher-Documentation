@@ -3,7 +3,7 @@ layout: page
 title: "REQUIREMENTS"
 permalink: /documentation/requirements.html
 --- 
-I recommend using our [Dockerfile](/Open-Publisher-Documentation/use/docker.html) to build the Docker container since it'll have all the tools you need, but if you want to isntall everything locally Open-Publisher needs the following software and tools to installed in order to work:
+I recommend using our [Dockerfile](/Open-Publisher-Documentation/use/docker.html) to build the Docker container since it'll have all the tools you need, but if you want to install everything locally Open-Publisher needs the following software and tools to installed in order to work:
 
 ## Ruby 2.x
 Jekyll requires ruby so you'll need a working Ruby installation.
