@@ -21,7 +21,7 @@ Run the command `. new.sh` and enter the title of your book when prompted.
 Paste your manuscript in `Source/_includes/$BOOK-TITLE/chapters.md`
 
 ## Update Your MetaData
-The beggining of your `Source/_includes/$BOOK-TITLE/chapters.md` contains "YAML Front Matter" and is used to define metadata about your book that we use in various places for various templates. Anything with an asterisk is optional.
+The beginning of your `Source/_includes/$BOOK-TITLE/chapters.md` contains "YAML Front Matter" and is used to define metadata about your book that we use in various places for various templates. Anything with an asterisk is optional.
 
 ```
 ---
